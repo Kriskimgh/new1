@@ -1,0 +1,39 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "I'm a starter theme for Astro.build",
+	title: "About",
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6">안내</h1>
+	<div class="prose prose-sm prose-cactus max-w-none">
+		<p>
+			YoungBible.com 은 기독교 연합 성경공부하는 곳입니다다
+		</p>
+		<p>주 예수를 믿으라, 그리하면 너와 너의 집이 구원이 있으리라</p>
+		<ul class="list-inside list-disc" role="list">
+			<li>주 예수 그리스도의 복음</li>
+			<li>그리스도의 사랑을 세상에 실천</li>
+			<li>온전한 말씀을 온전히 배움</li>
+			<li>주 예수 다시 오심을 믿습니다</li>
+			<li>전쟁을 그치고 인류의 평화를 위해 기도합니다. </li>
+		</ul>
+		<p>
+			문의 : <a
+				class="cactus-link inline-block"
+				href="https://youngbible.com"
+				rel="noreferrer"
+				target="_blank">후원문의</a
+			> 
+						<a
+				class="cactus-link inline-block"
+				href="https://youngbible.com"
+				rel="noreferrer"
+				target="_blank">수강문의</a
+			> 
+		</p>
+	</div>
+</PageLayout>
