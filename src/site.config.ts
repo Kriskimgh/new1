@@ -37,16 +37,20 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Home",
 	},
 	{
-		path: "/about/",
-		title: "About",
+		path: "/posts/",
+		title: "말씀과 찬양",
 	},
 	{
-		path: "/posts/",
-		title: "Blog",
+		path: "/about/",
+		title: "안내",
 	},
 	{
 		path: "/notes/",
-		title: "Notes",
+		title: "줌",
+	},
+	{
+		path: "/learn.youngbible.com/",
+		title: "✝️성경강의",
 	},
 ];
 
