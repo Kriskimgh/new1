@@ -49,7 +49,7 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "줌",
 	},
 	{
-		path: "/learn.youngbible.com/",
+  path: "https://learn.youngbible.com/",
 		title: "✝️성경강의",
 	},
 ];
