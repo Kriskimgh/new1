@@ -3,7 +3,7 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Chris Williams",
+	author: "kris & G.Kong",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
 		locale: "en-GB",
@@ -27,30 +27,22 @@ export const siteConfig: SiteConfig = {
 	*/
 	title: "YoungBible.com",
 	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
-	url: "https://astro-cactus.chriswilliams.dev/",
+	url: "https://youngbible.com/",
 };
 
 // Used to generate links in both the Header & Footer.
 export const menuLinks: { path: string; title: string }[] = [
 	{
-		path: "/",
-		title: "Home",
-	},
-	{
 		path: "/posts/",
-		title: "말씀과 찬양",
-	},
-	{
-		path: "/about/",
-		title: "안내",
+		title: "✝️말씀&찬양",
 	},
 	{
 		path: "/notes/",
-		title: "줌",
+		title: "🧑‍💻줌신청",
 	},
 	{
   path: "https://learn.youngbible.com/",
-		title: "✝️성경강의",
+		title: "📖성경강의",
 	},
 ];
 
