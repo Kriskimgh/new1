@@ -5,82 +5,58 @@ import { menuLinks } from "@/site.config";
 import {siteConfig} from "../../site.config";
 ---
 
-<header class="group relative mb-28 flex items-center sm:ps-18" id="main-header">
-  <div class="flex sm:flex-col">
-    <a
-      aria-current={Astro.url.pathname === "/" ? "page" : false}
-      class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
-      href="/"
+<!-- 전체 header wrapper -->
+<header class="mt-0 pt-0 !mt-0 !pt-0 mb-4">
+  <!-- 본문과 동일한 wrapper: padding 없는 중앙 정렬 -->
+  <div class="max-w-screen-md mx-auto">
+  
+    <!-- 타이틀 + 아이콘 줄 -->
+    <div class="flex justify-between items-center flex-wrap">
+      <a
+        href="/"
+        class="text-xl font-bold sm:text-2xl whitespace-nowrap"
+        aria-current={Astro.url.pathname === "/" ? "page" : false}
+      >
+        {siteConfig.title}
+      </a>
+
+      <div class="flex items-center gap-x-3">
+        <Search />
+        <ThemeToggle />
+        <mobile-button>
+          <button
+            aria-expanded="false"
+            aria-haspopup="menu"
+            class="group relative h-7 w-7 sm:hidden"
+            id="toggle-navigation-menu"
+            type="button"
+          >
+            <span class="sr-only">Open main menu</span>
+            <!-- 햄버거 아이콘 생략 -->
+          </button>
+        </mobile-button>
+      </div>
+    </div>
+
+    <!-- 메뉴 줄 -->
+    <nav
+      aria-label="Main menu"
+      class="flex items-center gap-x-4 border-b border-gray-600 pt-1 pb-2"
+      id="navigation-menu"
     >
-       
-      <img
-        src="/logo.png"
-        alt="YoungBible Logo"
-        class="me-3 h-10 sm:absolute sm:-start-18 sm:me-0 sm:h-20 sm:w-auto"
-      />
-	  
-      <span class="text-xl font-bold sm:text-2xl">{siteConfig.title}</span>
-    </a>
-		<nav
-			aria-label="Main menu"
-			class="bg-global-bg/85 text-accent sm:divide-accent absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md py-4 shadow backdrop-blur-sm group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
-			id="navigation-menu"
-		>
-			{
-				menuLinks.map((link) => (
-					<a
-						aria-current={Astro.url.pathname === link.path ? "page" : false}
-						class="px-4 py-4 underline-offset-2 hover:underline sm:py-0"
-						data-astro-prefetch
-						href={link.path}
-					>
-						{link.title}
-					</a>
-				))
-			}
-		</nav>
-	</div>
-	<Search />
-	<ThemeToggle />
-	<mobile-button>
-		<button
-			aria-expanded="false"
-			aria-haspopup="menu"
-			class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
-			id="toggle-navigation-menu"
-			type="button"
-		>
-			<span class="sr-only">Open main menu</span>
-			<svg
-				aria-hidden="true"
-				class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
-				fill="none"
-				focusable="false"
-				id="line-svg"
-				stroke="currentColor"
-				stroke-width="1.5"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"
-				></path>
-			</svg>
-			<svg
-				aria-hidden="true"
-				class="text-accent absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
-				class="text-accent"
-				fill="none"
-				focusable="false"
-				id="cross-svg"
-				stroke="currentColor"
-				stroke-width="1.5"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
-			</svg>
-		</button>
-	</mobile-button>
+      {
+        menuLinks.map((link) => (
+          <a
+            href={link.path}
+            class="text-sm hover:underline whitespace-nowrap"
+            aria-current={Astro.url.pathname === link.path ? "page" : false}
+          >
+            {link.title}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
 </header>
 
 <script>

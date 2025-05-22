@@ -3,7 +3,7 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "kris & G.Kong",
+	author: "",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
 		locale: "en-GB",
@@ -34,15 +34,15 @@ export const siteConfig: SiteConfig = {
 export const menuLinks: { path: string; title: string }[] = [
 	{
 		path: "/posts/",
-		title: "✝️말씀&찬양",
+		title: "✝️말씀과 찬양",
 	},
 	{
 		path: "/notes/",
-		title: "🧑‍💻줌신청",
+		title: "🧑‍💻줌",
 	},
 	{
   path: "https://learn.youngbible.com/",
-		title: "📖성경강의",
+		title: "📖강의",
 	},
 ];
 
