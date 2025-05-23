@@ -11,30 +11,28 @@ import {siteConfig} from "../../site.config";
   <div class="max-w-screen-md mx-auto">
   
     <!-- 타이틀 + 아이콘 줄 -->
-    <div class="flex justify-between items-center flex-wrap">
-      <a
-        href="/"
-        class="text-xl font-bold sm:text-2xl whitespace-nowrap"
-        aria-current={Astro.url.pathname === "/" ? "page" : false}
-      >
-        {siteConfig.title}
-      </a>
+<div class="flex justify-between items-center flex-nowrap overflow-hidden">
+  <a
+    href="/"
+    class="text-xl font-bold sm:text-2xl whitespace-nowrap overflow-hidden text-ellipsis"
+  >
+    {siteConfig.title}
+  </a>
 
-      <div class="flex items-center gap-x-3">
-        <Search />
-        <ThemeToggle />
-        <mobile-button>
-          <button
-            aria-expanded="false"
-            aria-haspopup="menu"
-            class="group relative h-7 w-7 sm:hidden"
-            id="toggle-navigation-menu"
-            type="button"
-          >
-            <span class="sr-only">Open main menu</span>
-            <!-- 햄버거 아이콘 생략 -->
-          </button>
-        </mobile-button>
+  <div class="flex items-center gap-x-2 shrink-0 min-w-fit">
+    <Search />
+    <ThemeToggle />
+      <mobile-button>
+      <button
+        aria-expanded="false"
+        aria-haspopup="menu"
+        class="group relative h-7 w-7 sm:hidden"
+        id="toggle-navigation-menu"
+        type="button"
+      >
+        <span class="sr-only">Open main menu</span>
+      </button>
+    </mobile-button>
       </div>
     </div>
 
