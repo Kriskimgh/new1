@@ -3,14 +3,14 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "",
+	author: "Kris",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
-		locale: "en-GB",
-		options: {
-			day: "numeric",
-			month: "short",
-			year: "numeric",
+    locale: "ko-KR",
+    options: {
+      year: "2-digit",
+      month: "numeric",
+      day: "numeric"
 		},
 	},
 	// Used as the default description meta property and webmanifest description
